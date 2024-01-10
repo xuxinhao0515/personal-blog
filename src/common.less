@@ -1,0 +1,35 @@
+// 白天色 
+@bgColor: var(--bgColor, #F7F8FA); 
+@textColor: var(--textColor, #333333);
+
+// 夜间色 
+@bgColor-dark: #171B30; 
+@textColor-dark: #FFFFFF;
+
+//主题色
+@themeColor: var(--themeColor, #111111);
+@textColorCom: var(--textColorCom, #FFFFFF);
+
+// 模式切换 
+.styleChange(@theme) { 
+    // 定义页面显示各种颜色，拼接 theme 主题 
+    @bgColor: "bgColor@{theme}";
+    @textColor: "textColor@{theme}";
+    // @subTextColor: "subTextColor@{theme}";
+    // @tipsColor: "tipsColor@{theme}";
+    width: 100%;
+    background: @@bgColor; 
+    color: @textColor;
+    // 使用 @@style 双@的方法取值 
+}
+// 白天模式 
+.Sunny {
+    .styleChange('');
+    transition: 1s all;
+// 执行less 函数 
+} // 夜间模式 
+.Moon {
+    .styleChange(-dark);
+    transition: 1s all;
+}
+
