@@ -5,27 +5,27 @@ export default [
         path: '/home',
         name: 'home',
         component: Layout,
-        redirect: '/home/index',
+        redirect: '/home/selfintroduction',
         meta: {
-          title: '首页',
-          icon: 'House'
+          title: '我的',
+          icon: 'sidebar_my'
         },
         children: [
             {
-                path: '/home/index',
-                name: 'index',
-                component: () => import('@/pages/home/index.vue'),
+                path: '/home/selfintroduction',
+                name: 'selfintroduction',
+                component: () => import('@/pages/home/selfintroduction.vue'),
                 meta: {
-                  title: '我的'
+                  title: '个人介绍'
                 }
             },
             {
-              path: '/home/index',
-              name: 'index',
-              component: () => import('@/pages/home/index.vue'),
+              path: '/home/selfskills',
+              name: 'selfskills',
+              component: () => import('@/pages/home/selfskills.vue'),
               meta: {
-                title: '关于'
-              }
+                title: '个人技能'
+            }
           }
         ]
     }

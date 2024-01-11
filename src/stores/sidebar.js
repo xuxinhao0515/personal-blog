@@ -21,7 +21,6 @@ export const useSidebar = defineStore('Sidebar', {
     setMenuList(){
       const router = useRouter()
       this.menuList = router.options.routes
-      console.log(this.menuList)
     }
   }
 })

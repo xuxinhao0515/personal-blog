@@ -10,7 +10,7 @@
 
 <script setup>
 import TopBar from './TopBar.vue'
-import DrawerCom from '../components/drawerCom.vue';
+import drawerCom from '../components/drawerCom.vue';
 import SideBar from './SideBar.vue'
 
 import { useSidebar } from '@/stores/sidebar';

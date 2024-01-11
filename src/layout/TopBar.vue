@@ -1,12 +1,28 @@
 <template>
     <header class="topbar" :style="{width : sidebar.opened ? 'calc(100% - 180px)' :'calc(100% - 64px)'}">
-        header
+        <Breadcrumb :systemNameFlag="systemName ? true : false">
+            <template #system-name>
+                <span>{{ systemName }}</span>
+            </template>
+        </Breadcrumb>
     </header>
     <div style="height: 54px"></div>
 </template>
 <script setup>
 import { useSidebar } from '../stores/sidebar';
+import Breadcrumb from '../components/Breadcrumb.vue';
+
 const sidebar = useSidebar()
+
+defineProps({
+  openNotification: {
+    default: false
+  },
+  systemName: {
+    default: '系统默认名称'
+  }
+})
+
 </script>
 <style scoped lang="less">
 .topbar{
